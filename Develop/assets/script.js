@@ -12,17 +12,17 @@ $('.saveBtn').on('click', function (){
 
 function liveTime (){
 
-    var presentTime = moment().hour();
+    var timeNow = moment().hour();
 
     $('time.block').each(function(){
         var hours = parseInt($(this).attr('id').split('hour')[1]);
 
-            if (hours < presentTime) {
+            if (hours < timeNow) {
                 $(this).addClass('past');
                 $(this).removeClass('future');
                 $(this).removeClass('present');
             }
-            else if (hours === presentTime) {
+            else if (hours === timeNow) {
                 $(this).removeClass('past')
                 $(this).addClass('present');
                 $(this).removeClass('future');
