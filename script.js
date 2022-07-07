@@ -4,9 +4,10 @@ $("#currentDay").html(presentTime);
 $(document).ready(function(){
 
 $('.saveBtn').on('click', function (){
-    var details = $(this).siblings('description').val 
+    var details = $(this).siblings('.description').val();
     var time = $(this).parent().attr('id');
     localStorage.setItem(time, details);
+    console.log(time , details);
 
 })
 
@@ -23,7 +24,7 @@ function liveTime (){
                 $(this).removeClass('present');
             }
             else if (hours === timeNow) {
-                $(this).removeClass('past')
+                $(this).removeClass('past');
                 $(this).addClass('present');
                 $(this).removeClass('future');
 
